@@ -3,5 +3,9 @@ Rails.application.routes.draw do
   root to: "pages#home"
   get "up" => "rails/health#show", as: :rails_health_check
 
-  resources :experiences, only: [:index, :show, :new]
+  resources :experiences, only: [:index, :show, :new] do
+      resources :bookings, only: [:new, :create]
+    end
+
+    resources :bookings, only: [:index, :show, :update]
 end
