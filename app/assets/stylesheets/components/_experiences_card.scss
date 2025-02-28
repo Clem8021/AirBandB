@@ -1,0 +1,19 @@
+.experiences_card{
+  background-color: rgb(245, 242, 249);
+  p{
+    color: rgb(50, 3, 111);
+    margin: 8px;
+  }
+
+  img{
+    height: 200px;
+    width: 350px;
+    border-radius: 10px;
+    object-fit: cover;
+
+  }
+
+  .experiences_body{
+    padding-left: 30px;
+  }
+}
