@@ -23,20 +23,40 @@
           <li class="nav-item">
             <%= link_to "Bookings", "#", class: "nav-link" %>
           </li>
+
+          <%# dropdown with user login_un & log_out %>
           <li class="nav-item dropdown">
-            <%= image_tag "https://media.istockphoto.com/id/1431567498/fr/vectoriel/illustration-vectorielle-de-notes-de-musique-sur-fond-blanc.jpg?s=612x612&w=0&k=20&c=BlXbPeaCz3PEle5hXy6ndnVw_4OKunNSUInE-QbDYg4=", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Action", "#", class: "dropdown-item" %>
-              <%= link_to "Another action", "#", class: "dropdown-item" %>
-              <%= link_to "Log out", "#", class: "dropdown-item", data: {turbo_method: :delete} %>
-              <%# link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
-            </div>
+            <% if user_signed_in? %>
+              <%= image_tag current_user.avatar_url.presence || "https://media.istockphoto.com/id/1431567498/fr/vectoriel/illustration-vectorielle-de-notes-de-musique-sur-fond-blanc.jpg?s=612x612&w=0&k=20&c=BlXbPeaCz3PEle5hXy6ndnVw_4OKunNSUInE-QbDYg4=",
+                class: "avatar dropdown-toggle",
+                id: "navbarDropdown",
+                data: { bs_toggle: "dropdown" },
+                'aria-haspopup': true,
+                'aria-expanded': false
+              %>
+
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                <span class="dropdown-item-text fw-bold">
+                  👤 <%= current_user.first_name || "Utilisateur" %>
+                </span>
+
+                <%= link_to "Profil", edit_user_registration_path, class: "dropdown-item" %>
+                <%= link_to "Mes réservations", bookings_path, class: "dropdown-item" %>
+
+                <div class="dropdown-divider"></div>
+
+                <%= link_to "Déconnexion", destroy_user_session_path, class: "dropdown-item text-danger", data: { turbo_method: :delete } %>
+              </div>
+            <% else %>
+              <%= link_to "Se connecter", new_user_session_path, class: "nav-link" %>
+            <% end %>
           </li>
-        <%# else %>
-          <!--li class="nav-item"-->
-            <%#= link_to "Login", new_user_session_path, class: "nav-link" %>
-          <!--/li-->
-        <%# end %>
+
+          <% if !user_signed_in? %>
+            <li class="nav-item">
+              <%= link_to "S'inscrire", new_user_registration_path, class: "nav-link" %>
+            </li>
+          <% end %>
       </ul>
     </div>
   </div>
