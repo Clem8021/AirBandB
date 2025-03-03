@@ -1,30 +1,34 @@
 <div class="container mt-5">
   <div class="row">
     <div class="col">
-    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1566808907623-51b8fc382454?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)">
-      <h1>Bienvenue sur AirBandB</h1>
-    </div>
-
+      <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1566808907623-51b8fc382454?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)">
+        <h1>Bienvenue sur AirBandB</h1>
+      </div>
 
       <p class="fst-italic mt-2">Le lieu idéal pour trouver des expériences musicales qui te correspondent</p>
     </div>
   </div>
 
-
-  <ul class="row">
+  <div class="row">
     <% @experiences.each do |experience| %>
       <div class="col-12 col-md-6 col-lg-4 mb-4">
         <div class="experiences_card border shadow-sm p-3 mb-5 rounded m-3">
-          <img id="photo" src="https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"/> <%# experience.photo %>
+          <!-- Affichage de l'image de l'expérience via ActiveStorage -->
+          <%= link_to experience_path(experience) do %>
+          <% if experience.photo.attached? %>
+          <%= image_tag url_for(experience.photo) %>
+          <% end %>
+
           <h4 class="mt-3 font-weight-bold"><%= experience.name %></h4>
           <p class="mt-1 ms-0 text-muted fst-italic"><%= experience.stage_name %></p>
           <div class="experiences_body mt-4">
-            <p><i class="fa-solid fa-music"></i></i><%= experience.musical_genre %></p>
-            <p><i class="fa-solid fa-web-awesome"></i></i><%= experience.absurd_requirement %></p>
-            <p><i class="fa-solid fa-euro-sign"></i><%= experience.price_per_day %></p>
+            <p><i class="fa-solid fa-music"></i> <%= experience.musical_genre %></p>
+            <p><i class="fa-solid fa-web-awesome"></i> <%= experience.absurd_requirement %></p>
+            <p><i class="fa-solid fa-euro-sign"></i> <%= experience.price_per_day %>€/jour</p>
           </div>
+          <% end %>
         </div>
       </div>
-    <%  end %>
-    </ul>
+    <% end %>
+  </div>
 </div>
