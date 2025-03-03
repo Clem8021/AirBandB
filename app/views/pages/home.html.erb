@@ -1,111 +1,31 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <div class="container-fluid">
-    <div class="navbar-title d-flex align-items-center justify-content-start">
-      <%= link_to "#", class: "navbar-brand" do %>
-        <%= image_tag "https://as1.ftcdn.net/v2/jpg/03/11/40/32/1000_F_311403223_PqZgUJBzDitoQu2GJ86wHbNCJxpXK7FZ.jpg" %>
-      <% end %>
-      <h5 class="mt-2">AirbandB</h5>
-    </div>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
-        <%# if user_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to "Home", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Experiences", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Bookings", "#", class: "nav-link" %>
-          </li>
-
-          <%# dropdown with user login_un & log_out %>
-          <li class="nav-item dropdown">
-            <% if user_signed_in? %>
-              <%= image_tag current_user.avatar_url.presence || "https://media.istockphoto.com/id/1431567498/fr/vectoriel/illustration-vectorielle-de-notes-de-musique-sur-fond-blanc.jpg?s=612x612&w=0&k=20&c=BlXbPeaCz3PEle5hXy6ndnVw_4OKunNSUInE-QbDYg4=",
-                class: "avatar dropdown-toggle",
-                id: "navbarDropdown",
-                data: { bs_toggle: "dropdown" },
-                'aria-haspopup': true,
-                'aria-expanded': false
-              %>
-
-              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                <span class="dropdown-item-text fw-bold">
-                  👤 <%= current_user.name || "Utilisateur" %>
-                </span>
-
-                <%= link_to "Profil", edit_user_registration_path, class: "dropdown-item" %>
-                <%= link_to "Mes réservations", bookings_path, class: "dropdown-item" %>
-
-                <div class="dropdown-divider"></div>
-
-                <%= link_to "Déconnexion", destroy_user_session_path, class: "dropdown-item text-danger", data: { turbo_method: :delete } %>
-              </div>
-            <% else %>
-              <%= link_to "Se connecter", new_user_session_path, class: "nav-link" %>
-            <% end %>
-          </li>
-
-          <% if !user_signed_in? %>
-            <li class="nav-item">
-              <%= link_to "S'inscrire", new_user_registration_path, class: "nav-link" %>
-            </li>
-          <% end %>
-      </ul>
-    </div>
-  </div>
-</div>
-
 <div class="container mt-5">
   <div class="row">
     <div class="col">
-    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1566808907623-51b8fc382454?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)">
-      <h1>Bienvenue sur AirBandB</h1>
-    </div>
-
-
+      <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1566808907623-51b8fc382454?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)">
+        <h1>Bienvenue sur AirBandB</h1>
+      </div>
       <p class="fst-italic mt-2">Le lieu idéal pour trouver des expériences musicales qui te correspondent</p>
     </div>
   </div>
 
-
-  <ul class="d-flex">
-    <%# <% @experiences.each do |experience| %>
-      <li class="experiences_card border shadow-sm p-3 mb-5 rounded m-3">
-          <img id="photo" src="https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"/> <%# experience.photo %>
-          <h4 class="mt-3 font-weight-bold">Batteur Qui Explose Tout <%# experience.name %></h4>
-          <p class="mt-1 ms-0 text-muted fst-italic">Un garage insonorisé<%# experience.stage_name %></p>
+  <ul class="row">
+    <% @experiences.each do |experience| %>
+      <div class="col-12 col-md-6 col-lg-4 mb-4">
+        <div class="experiences_card border shadow-sm p-3 mb-5 rounded m-3">
+          <%= link_to experience_path(experience) do %>
+          <% if experience.photo.attached? %>
+          <%= image_tag url_for(experience.photo) %>
+          <% end %>
+          <h4 class="mt-3 font-weight-bold"><%= experience.name %></h4>
+          <p class="mt-1 ms-0 text-muted fst-italic"><%= experience.stage_name %></p>
           <div class="experiences_body mt-4">
-            <p><i class="fa-solid fa-music"></i></i> Rock <%# experience.musical_genre %></p>
-            <p><i class="fa-solid fa-web-awesome"></i></i> Détruire une batterie<%# experience.absurd_requirement %></p>
-            <p><i class="fa-solid fa-euro-sign"></i> 98€/jour <%# experience.price_per_day %></p>
+            <p><i class="fa-solid fa-music"></i> <%= experience.musical_genre %></p>
+            <p><i class="fa-solid fa-web-awesome"></i> <%= experience.absurd_requirement %></p>
+            <p><i class="fa-solid fa-euro-sign"></i> <%= experience.price_per_day %>€/jour</p>
           </div>
-      </li>
-
-      <li class="experiences_card border shadow-sm p-3 mb-5 rounded m-3">
-          <img id="photo" src="https://plus.unsplash.com/premium_photo-1682920140924-d8b5db318d97?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8Y2hhbnRldXNlfGVufDB8fDB8fHww"/> <%# experience.photo %>
-          <h4 class="mt-3 font-weight-bold">Diva pour une Nuit <%# experience.name %></h4>
-          <p class="mt-1 ms-0 text-muted fst-italic">Chambre VIP avec micro doré<%# experience.experience.stage_name %></p>
-          <div class="experiences_body mt-4">
-            <p><i class="fa-solid fa-music"></i></i> Pop <%# experience.musical_genre %></p>
-            <p><i class="fa-solid fa-web-awesome"></i></i> Dressing ultra-exigeant<%# experience.absurd_requirement %></p>
-            <p><i class="fa-solid fa-euro-sign"></i> 65€/jour <%# experience.price_per_day %></p>
-          </div>
-      </li>
-    <%# <% end %>
-    </ul>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </ul>
 </div>
-<div class="footer">
-  <div class="footer-links">
-    <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fab fa-facebook"></i></a>
-    <a href="#"><i class="fab fa-twitter"></i></a>
-  </div>
-  <div class="footer-copyright">
-    Lorem <i class="fa-solid fa-music"></i> ipsum
-  </div>
