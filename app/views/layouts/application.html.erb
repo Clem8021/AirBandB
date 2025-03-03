@@ -81,5 +81,13 @@
     <!-- Contenu spécifique de chaque page -->
     <%= yield %>  <!-- Le contenu spécifique à la vue sera ici -->
 
+    <%= render "shared/navbar" %>
+
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <%= yield %>
+
+    <%= render "shared/footer" %>
   </body>
 </html>
