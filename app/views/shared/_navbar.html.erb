@@ -1,0 +1,62 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <div class="container-fluid">
+    <div class="navbar-title d-flex align-items-center justify-content-start">
+      <%= link_to "#", class: "navbar-brand" do %>
+        <%= image_tag "https://as1.ftcdn.net/v2/jpg/03/11/40/32/1000_F_311403223_PqZgUJBzDitoQu2GJ86wHbNCJxpXK7FZ.jpg" %>
+      <% end %>
+      <h5 class="mt-2">AirbandB</h5>
+    </div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto">
+        <%# if user_signed_in? %>
+          <li class="nav-item active">
+            <%= link_to "Home", root_path , class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Experiences", experiences_path , class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Bookings", "#", class: "nav-link" %>
+          </li>
+
+          <%# dropdown with user login_un & log_out %>
+          <li class="nav-item dropdown">
+            <% if user_signed_in? %>
+              <%= image_tag current_user.avatar_url.presence || "https://media.istockphoto.com/id/1431567498/fr/vectoriel/illustration-vectorielle-de-notes-de-musique-sur-fond-blanc.jpg?s=612x612&w=0&k=20&c=BlXbPeaCz3PEle5hXy6ndnVw_4OKunNSUInE-QbDYg4=",
+                class: "avatar dropdown-toggle",
+                id: "navbarDropdown",
+                data: { bs_toggle: "dropdown" },
+                'aria-haspopup': true,
+                'aria-expanded': false
+              %>
+
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                <span class="dropdown-item-text fw-bold">
+                  👤 <%= current_user.name || "Utilisateur" %>
+                </span>
+
+                <%= link_to "Profil", edit_user_registration_path, class: "dropdown-item" %>
+                <%= link_to "Mes réservations", bookings_path, class: "dropdown-item" %>
+
+                <div class="dropdown-divider"></div>
+
+                <%= link_to "Déconnexion", destroy_user_session_path, class: "dropdown-item text-danger", data: { turbo_method: :delete } %>
+              </div>
+            <% else %>
+              <%= link_to "Se connecter", new_user_session_path, class: "nav-link" %>
+            <% end %>
+          </li>
+
+          <% if !user_signed_in? %>
+            <li class="nav-item">
+              <%= link_to "S'inscrire", new_user_registration_path, class: "nav-link" %>
+            </li>
+          <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
