@@ -79,6 +79,4 @@ test:
 #
 production:
   <<: *default
-  database: air_band_b_production
-  username: air_band_b
-  password: <%= ENV["AIR_BAND_B_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
