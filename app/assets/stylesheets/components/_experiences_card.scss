@@ -1,6 +1,6 @@
 .experiences_card{
   background-color: rgb(245, 242, 249);
-  p{
+  p, h4{
     color: rgb(50, 3, 111);
     margin: 8px;
   }
@@ -11,6 +11,10 @@
     border-radius: 10px;
     object-fit: cover;
 
+  }
+
+  a{
+    text-decoration: none;
   }
 
   .experiences_body{

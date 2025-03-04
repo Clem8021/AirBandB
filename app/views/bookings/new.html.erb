@@ -1,0 +1,17 @@
+<div class="container">
+
+  <div class="experience-details mt-4">
+          <h3 class="h4">Détails</h3>
+          <div class="card mb-3">
+            <div class="card-body">
+              <p><strong>Nom de scène :</strong> <%= @experience.stage_name %></p>
+              <p><strong>Genre musical :</strong> <%= @experience.musical_genre %></p>
+              <p><strong>Exigence absurde :</strong> <%= @experience.absurd_requirement %></p>
+              <p><strong>Prix par jour :</strong> <%= @experience.price_per_day %> €</p>
+            </div>
+          </div>
+        </div>
+
+  <%= render "form", booking: @booking %>
+
+</div>
