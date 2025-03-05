@@ -26,6 +26,7 @@ diva = Experience.create!(
 )
 file = URI.parse('https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?q=80&w=2938&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D').open
 diva.photo.attach(io: file, filename: "drummer", content_type: "image/png")
+diva.save
 
 violon = Experience.create!(
   name: "Le Violoniste Acrobatique",
@@ -36,6 +37,7 @@ violon = Experience.create!(
 )
 file = URI.parse('https://images.unsplash.com/photo-1460036521480-ff49c08c2781?q=80&w=2946&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D').open
 violon.photo.attach(io: file, filename: "drummer", content_type: "image/png")
+violon.save
 
 eau = Experience.create!(
   name: "Le Chanteur Sous-Marin",
@@ -46,6 +48,7 @@ eau = Experience.create!(
 )
 file = URI.parse('https://images.unsplash.com/photo-1560364897-91578ff41817?q=80&w=2748&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D').open
 eau.photo.attach(io: file, filename: "drummer", content_type: "image/png")
+eau.save
 
 cycliste = Experience.create!(
   name: "Le Pianiste Cycliste",
@@ -56,6 +59,7 @@ cycliste = Experience.create!(
 )
 file = URI.parse('https://images.unsplash.com/photo-1484920274317-87885fcbc504?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D').open
 cycliste.photo.attach(io: file, filename: "drummer", content_type: "image/png")
+cycliste.save
 
 culinaire = Experience.create!(
   name: "Le Drummer Culinaire",
@@ -66,6 +70,7 @@ culinaire = Experience.create!(
 )
 file = URI.parse('https://images.unsplash.com/photo-1586969593928-1c87c1f9c2ef?q=80&w=2946&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D').open
 culinaire.photo.attach(io: file, filename: "drummer", content_type: "image/png")
+culinaire.save
 
 saxo = Experience.create!(
   name: "Le Saxophoniste Funambule",
@@ -76,6 +81,7 @@ saxo = Experience.create!(
 )
 file = URI.parse('https://images.unsplash.com/photo-1623123776919-e5208e9b0b47?q=80&w=2714&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D').open
 saxo.photo.attach(io: file, filename: "drummer", content_type: "image/png")
+saxo.save
 
 rappeur = Experience.create!(
   name: "Le Rappeur Linguistique",
@@ -86,6 +92,7 @@ rappeur = Experience.create!(
 )
 file = URI.parse('https://images.unsplash.com/photo-1620969427101-7a2bb6d83273?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D').open
 rappeur.photo.attach(io: file, filename: "drummer", content_type: "image/png")
+rappeur.save
 
 guitariste = Experience.create!(
   name: "Le Guitariste Météorologique",
@@ -96,6 +103,7 @@ guitariste = Experience.create!(
 )
 file = URI.parse('https://images.unsplash.com/photo-1510915361894-db8b60106cb1?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D').open
 guitariste.photo.attach(io: file, filename: "drummer", content_type: "image/png")
+guitariste.save
 
 robot = Experience.create!(
   name: "Le Claviériste Robotique",
@@ -106,5 +114,6 @@ robot = Experience.create!(
 )
 file = URI.parse('https://images.unsplash.com/photo-1582571352032-448f7928eca3?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjR8fHJvYm90fGVufDB8fDB8fHww').open
 robot.photo.attach(io: file, filename: "drummer", content_type: "image/png")
+robot.save
 
 puts "Finished! Created experiences."
