@@ -13,7 +13,8 @@ batteur = Experience.create!(
   absurd_requirement: "Détruire une batterie",
   price_per_day: 75
 )
-batteur.photo.attach(io: URI.open('https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'), filename: "drummer", content_type: "image/png")
+file = URI.parse('https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D').open
+batteur.photo.attach(io: file, filename: "drummer", content_type: "image/png")
 batteur.save
 
 diva = Experience.create!(
@@ -23,7 +24,8 @@ diva = Experience.create!(
   absurd_requirement: "Dressing ultra-exigeant",
   price_per_day: 50
 )
-diva.photo.attach(io: URI.open('https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?q=80&w=2938&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'), filename: "drummer", content_type: "image/png")
+file = URI.parse('https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?q=80&w=2938&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D').open
+diva.photo.attach(io: file, filename: "drummer", content_type: "image/png")
 
 violon = Experience.create!(
   name: "Le Violoniste Acrobatique",
@@ -32,7 +34,8 @@ violon = Experience.create!(
   absurd_requirement: "Jouer en équilibre sur une boule",
   price_per_day: 40
 )
-violon.photo.attach(io: URI.open('https://images.unsplash.com/photo-1460036521480-ff49c08c2781?q=80&w=2946&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'), filename: "drummer", content_type: "image/png")
+file = URI.parse('https://images.unsplash.com/photo-1460036521480-ff49c08c2781?q=80&w=2946&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D').open
+violon.photo.attach(io: file, filename: "drummer", content_type: "image/png")
 
 eau = Experience.create!(
   name: "Le Chanteur Sous-Marin",
@@ -41,7 +44,8 @@ eau = Experience.create!(
   absurd_requirement: "Chanter entièrement sous l'eau",
   price_per_day: 90
 )
-eau.photo.attach(io: URI.open('https://images.unsplash.com/photo-1560364897-91578ff41817?q=80&w=2748&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'), filename: "drummer", content_type: "image/png")
+file = URI.parse('https://images.unsplash.com/photo-1560364897-91578ff41817?q=80&w=2748&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D').open
+eau.photo.attach(io: file, filename: "drummer", content_type: "image/png")
 
 cycliste = Experience.create!(
   name: "Le Pianiste Cycliste",
@@ -50,7 +54,8 @@ cycliste = Experience.create!(
   absurd_requirement: "Jouer du piano en pédalant",
   price_per_day: 90
 )
-cycliste.photo.attach(io: URI.open('https://images.unsplash.com/photo-1484920274317-87885fcbc504?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'), filename: "drummer", content_type: "image/png")
+file = URI.parse('https://images.unsplash.com/photo-1484920274317-87885fcbc504?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D').open
+cycliste.photo.attach(io: file, filename: "drummer", content_type: "image/png")
 
 culinaire = Experience.create!(
   name: "Le Drummer Culinaire",
@@ -59,7 +64,8 @@ culinaire = Experience.create!(
   absurd_requirement: "Utiliser des ustensiles de cuisine comme instruments",
   price_per_day: 85
 )
-culinaire.photo.attach(io: URI.open('https://images.unsplash.com/photo-1586969593928-1c87c1f9c2ef?q=80&w=2946&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'), filename: "drummer", content_type: "image/png")
+file = URI.parse('https://images.unsplash.com/photo-1586969593928-1c87c1f9c2ef?q=80&w=2946&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D').open
+culinaire.photo.attach(io: file, filename: "drummer", content_type: "image/png")
 
 saxo = Experience.create!(
   name: "Le Saxophoniste Funambule",
@@ -68,7 +74,8 @@ saxo = Experience.create!(
   absurd_requirement: "Jouer en marchant sur un fil",
   price_per_day: 150
 )
-saxo.photo.attach(io: URI.open('https://images.unsplash.com/photo-1623123776919-e5208e9b0b47?q=80&w=2714&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'), filename: "drummer", content_type: "image/png")
+file = URI.parse('https://images.unsplash.com/photo-1623123776919-e5208e9b0b47?q=80&w=2714&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D').open
+saxo.photo.attach(io: file, filename: "drummer", content_type: "image/png")
 
 rappeur = Experience.create!(
   name: "Le Rappeur Linguistique",
@@ -77,7 +84,8 @@ rappeur = Experience.create!(
   absurd_requirement: "Rapper uniquement avec des mots du dictionnaire",
   price_per_day: 100
 )
-rappeur.photo.attach(io: URI.open('https://images.unsplash.com/photo-1620969427101-7a2bb6d83273?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'), filename: "drummer", content_type: "image/png")
+file = URI.parse('https://images.unsplash.com/photo-1620969427101-7a2bb6d83273?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D').open
+rappeur.photo.attach(io: file, filename: "drummer", content_type: "image/png")
 
 guitariste = Experience.create!(
   name: "Le Guitariste Météorologique",
@@ -86,7 +94,8 @@ guitariste = Experience.create!(
   absurd_requirement: "Jouer selon les conditions météorologiques",
   price_per_day: 110
 )
-guitariste.photo.attach(io: URI.open('https://images.unsplash.com/photo-1510915361894-db8b60106cb1?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'), filename: "drummer", content_type: "image/png")
+file = URI.parse('https://images.unsplash.com/photo-1510915361894-db8b60106cb1?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D').open
+guitariste.photo.attach(io: file, filename: "drummer", content_type: "image/png")
 
 robot = Experience.create!(
   name: "Le Claviériste Robotique",
@@ -95,6 +104,7 @@ robot = Experience.create!(
   absurd_requirement: "Jouer avec des mouvements robotiques",
   price_per_day: 83
 )
-robot.photo.attach(io: URI.open('https://images.unsplash.com/photo-1582571352032-448f7928eca3?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjR8fHJvYm90fGVufDB8fDB8fHww'), filename: "drummer", content_type: "image/png")
+file = URI.parse('https://images.unsplash.com/photo-1582571352032-448f7928eca3?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjR8fHJvYm90fGVufDB8fDB8fHww').open
+robot.photo.attach(io: file, filename: "drummer", content_type: "image/png")
 
 puts "Finished! Created experiences."
