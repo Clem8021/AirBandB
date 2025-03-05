@@ -11,9 +11,10 @@ batteur = Experience.create!(
   stage_name: "Un garage insonorisé",
   musical_genre: "Rock",
   absurd_requirement: "Détruire une batterie",
-  price_per_day: 75,
+  price_per_day: 75
 )
 batteur.photo.attach(io: URI.open('https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'), filename: "drummer", content_type: "image/png")
+batteur.save
 
 diva = Experience.create!(
   name: "Diva pour une Nuit ",
