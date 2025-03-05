@@ -8,22 +8,23 @@
   <div class="row">
     <% @bookings.each do |booking| %>
       <div class="col-12 col-md-6 col-lg-4 mb-4">
-        <div class="experiences_card border shadow-sm p-3 mb-5 rounded m-3">
-          <!-- Affichage de l'image de l'expérience via ActiveStorage -->
-          <%# <%= link_to experience_path(experience) do %>
-          <%# <% if booking.experience.photo.attached? %>
-          <%# <%= image_tag url_for(booking.experience.photo) %>
-          <%# <% end %>
+        <div class="experiences_card border shadow-sm p-3 mb-5 rounded m-3 ">
+          <%= link_to booking_path(booking), class: "text-decoration-none text-dark" do %>
+            <% if booking.experience.photo.attached? %>
+              <%= image_tag booking.experience.photo, alt: "Image de l'expérience", class: "img-fluid rounded shadow-lg" %>
+            <% else %>
+              <p class="text-muted">Aucune photo disponible pour cette expérience.</p>
+            <% end %>
 
-          <h4 class="mt-3 font-weight-bold"><%= booking.experience.name %></h4>
-          <p class="mt-1 ms-2  text-muted fst-italic"><%= booking.experience.stage_name %></p>
-          <div class="experiences_body mt-4">
-            <p><i class="fa-solid fa-music"></i> <%= booking.experience.musical_genre %></p>
-            <p><i class="fa-solid fa-web-awesome"></i> <%= booking.experience.absurd_requirement %></p>
-            <p><i class="fa-solid fa-euro-sign"></i> <%= booking.experience.price_per_day %>€/jour</p>
-            <p><i class="fa-solid fa-calendar-days"></i> Du: <%= booking.date_start %> Au: <%= booking.date_end %></p>
-          </div>
-
+            <h4 class="mt-3 fw-bold "><%= booking.experience.name %></h4>
+            <p class="mt-1 ms-2  text-muted fst-italic"><%= booking.experience.stage_name %></p>
+            <div class="experiences_body mt-4">
+              <p><i class="fa-solid fa-music"></i> <%= booking.experience.musical_genre %></p>
+              <p><i class="fa-solid fa-web-awesome"></i> <%= booking.experience.absurd_requirement %></p>
+              <p><i class="fa-solid fa-euro-sign"></i> <%= booking.experience.price_per_day %>€/jour</p>
+              <p><i class="fa-solid fa-calendar-days"></i> Du: <%= booking.date_start %> Au: <%= booking.date_end %></p>
+            </div>
+          <% end %>
         </div>
       </div>
     <% end %>

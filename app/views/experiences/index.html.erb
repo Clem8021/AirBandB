@@ -1,21 +1,22 @@
-  <div class="row">
-    <% @experiences.each do |experience| %>
-      <div class="col-12 col-md-6 col-lg-4 mb-4">
-        <div class="experiences_card border shadow-sm p-3 mb-5 rounded m-3">
-          <%= link_to experience_path(experience), class: "text-decoration-none text-dark" do %>
-            <% if experience.photo.attached? %>
-              <%= image_tag experience.photo.variant(resize_to_fill: [300, 300]), class: "img-fluid rounded" %>
-            <% end %>
-            <h4 class="mt-3 fw-bold"><%= experience.name %></h4>
-            <p class="mt-1 ms-2 text-muted fst-italic"><%= experience.stage_name %></p>
-            <div class="experiences_body mt-4">
-              <p><i class="fa-solid fa-music"></i> <%= experience.musical_genre %></p>
-              <p><i class="fa-solid fa-star"></i> <%= experience.absurd_requirement %></p>
-              <p><i class="fa-solid fa-euro-sign"></i> <%= experience.price_per_day %>€/jour</p>
-            </div>
-          <% end %>
-        </div>
+<div class="row">
+  <% @experiences.each do |experience| %>
+    <div class="col-12 col-md-6 col-lg-4 mb-4">
+      <div class="experiences_card border shadow-sm p-3 mb-5 rounded m-3">
+        <%= link_to experience_path(experience), class: "text-decoration-none text-dark" do %>
+          <% if experience.photo.attached? %>
+          <%= image_tag experience.photo, alt: "Image de l'expérience", class: "img-fluid rounded shadow-lg" %>
+        <% else %>
+          <p class="text-muted">Aucune photo disponible pour cette expérience.</p>
+        <% end %>
+          <h4 class="mt-3 fw-bold"><%= experience.name %></h4>
+          <p class="mt-1 ms-2 text-muted fst-italic"><%= experience.stage_name %></p>
+          <div class="experiences_body mt-4">
+            <p><i class="fa-solid fa-music"></i> <%= experience.musical_genre %></p>
+            <p><i class="fa-solid fa-star"></i> <%= experience.absurd_requirement %></p>
+            <p><i class="fa-solid fa-euro-sign"></i> <%= experience.price_per_day %>€/jour</p>
+          </div>
+        <% end %>
       </div>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 </div>
