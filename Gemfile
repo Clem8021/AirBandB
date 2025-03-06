@@ -30,7 +30,8 @@ gem "sassc-rails"
 
 #My gems :
 gem "devise"
-gem 'cloudinary', '~> 1.16'
+gem 'cloudinary'
+gem 'activestorage-cloudinary-service'
 
 group :development, :test do
   gem "dotenv-rails"
