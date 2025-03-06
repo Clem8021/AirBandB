@@ -2,14 +2,14 @@
   <% if @booking.present? %>
     <div class="container mt-4">
       <div class="row">
-        <div class="col-md-8 offset-md-2">
+        <div class="col-md-8 offset-md-2 show_card">
           <!-- Titre de l'expérience -->
-          <h1 class="display-4 text-center"><%= @booking.experience.name %></h1>
+          <h1 class="display-4 text-center mb-3"><%= @booking.experience.name %></h1>
 
           <!-- Section photo de l'expérience -->
           <div class="text-center">
             <% if @booking.experience.photo.attached? %>
-              <%= image_tag @booking.experience.photo, alt: "Image de l'expérience", class: "img-fluid rounded shadow-lg", size: '400x400'%>
+              <%= image_tag @booking.experience.photo, alt: "Image de l'expérience"%>
             <% else %>
               <p class="text-muted">Aucune photo disponible pour cette expérience.</p>
             <% end %>
@@ -18,12 +18,12 @@
           <!-- Détails de l'expérience -->
           <div class="experience-details mt-4">
             <h4>Détails</h4>
-            <div class="card mb-3">
-              <div class="card-body">
-                <p><strong>Nom de scène :</strong> <%= @booking.experience.stage_name %></p>
-                <p><strong>Genre musical :</strong> <%=  @booking.experience.musical_genre %></p>
-                <p><strong>Exigence absurde :</strong> <%=  @booking.experience.absurd_requirement %></p>
-                <p><strong>Prix par jour :</strong> <%=  @booking.experience.price_per_day %> €</p>
+            <div class="mb-3">
+              <div class="body">
+                <p><i class="fa-solid fa-house-chimney"></i> &nbsp<strong>Scène :</strong> <%= @booking.experience.stage_name %></p>
+                <p><i class="fa-solid fa-guitar"></i> &nbsp<strong>Genre musical :</strong> <%=  @booking.experience.musical_genre %></p>
+                <p><i class="fa-solid fa-people-carry-box"></i> &nbsp<strong>Exigence absurde :</strong> <%=  @booking.experience.absurd_requirement %></p>
+                <p><i class="fa-solid fa-money-check-dollar"></i> &nbsp<strong>Prix par jour :</strong> <%=  @booking.experience.price_per_day %> €</p>
               </div>
             </div>
           </div>
@@ -35,7 +35,7 @@
 
           <!-- Section retour à la page d'accueil -->
           <div class="text-center mt-4 mb-5">
-            <%= link_to 'Retour à l\'accueil', root_path, class: "btn btn-primary btn-lg" %>
+            <%= link_to 'Retour à l\'accueil', root_path, class: "button" %>
           </div>
         </div>
       </div>
