@@ -4,7 +4,7 @@
       <div class="experiences_card border shadow-sm p-3 mb-5 rounded m-3">
         <%= link_to experience_path(experience), class: "text-decoration-none text-dark" do %>
           <% if experience.photo.attached? %>
-          <%= image_tag experience.photo, alt: "Image de l'expérience", class: "img-fluid rounded shadow-lg" %>
+          <%= image_tag experience.photo, alt: "Image de l'expérience", class: "img-fluid rounded " %>
         <% else %>
           <p class="text-muted">Aucune photo disponible pour cette expérience.</p>
         <% end %>
