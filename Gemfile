@@ -31,14 +31,13 @@ gem "sassc-rails"
 #My gems :
 gem "devise"
 gem 'cloudinary'
-# gem 'activestorage-cloudinary-service'
+gem "dotenv-rails"
 
 group :production do
   gem 'activestorage-cloudinary-service'
 end
 
 group :development, :test do
-  gem "dotenv-rails"
   gem "debug", platforms: %i[ mri windows ]
 end
 
