@@ -1,3 +1,4 @@
+<container-back>
 <div class="container mt-5">
  <div class="banner position-relative d-flex align-items-center text-white text-center"
        style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
@@ -55,10 +56,12 @@
 <div class="text-center mt-5">
   <h2 class="fw-bold text-uppercase mt-5">🎲 Pas inspiré ? Tire au sort une expérience musicale !</h2>
   <%= link_to "🎲 Découvrir une expérience aléatoire", experience_path(Experience.order("RANDOM()").first),
-              class: "btn btn-warning btn-lg btn-purple mt-3 rounded-pill shadow" %>
+              class: "btn btn-warning btn-lg btn-purple btn-purple-dark mt-3 rounded-pill shadow", id: "hel"%>
 </div>
 
 
+
+</container-back>
 <footer class="d-flex flex-column justify-content-center align-items-center text-center py-4 mt-5 bg-dark text-light">
   <p class="m-0">© <%= Time.now.year %> AirBandB. Tous droits réservés.</p>
   <p class="m-0 fst-italic">“Trouvez l’expérience musicale de vos rêves… ou de vos cauchemars.”</p>

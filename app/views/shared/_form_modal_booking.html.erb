@@ -1,0 +1,59 @@
+<div class="modal fade" id="experienceBookingModal" tabindex="-1" aria-labelledby="bookingModalTitle" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h2 id="modalTitle" class="modal-title">Réserver cette expérience </h2>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fermer"></button>
+      </div>
+
+
+      <div class="modal-body">
+        <div class="custom-experience-card">
+          <div class="card-header">
+            <h4 class="neon-text"><%= @experience.name %></h4>
+          </div>
+
+          <div class="card-body">
+            <p><i class="fa-solid fa-microphone-lines"></i> :<strong>:</strong> <%= @experience.stage_name %></p>
+            <p><i class="fa-solid fa-music"></i> <strong> :</strong> <%= @experience.musical_genre %></p>
+            <p><i class="fa-solid fa-star"></i> <strong> :</strong> <%= @experience.absurd_requirement %></p>
+            <p><i class="fa-solid fa-euro-sign"></i> <strong> :</strong> <%= @experience.price_per_day %> €</p>
+          </div>
+</div>
+
+
+        <div class="text-center">
+          <h3 class="h5 text-purple">📅 Sélectionnez vos dates</h3>
+        </div>
+
+        <%= simple_form_for [@experience, @booking || Booking.new], html: { class: "custom-booking-form" } do |f| %>
+          <div class="row">
+
+            <div class="col-md-6">
+              <div class="input-wrapper">
+                <i class="fa-solid fa-calendar-day neon-icon"></i>
+                <%= f.input :date_start, as: :string, input_html: { data: { controller: "datepicker" }, class: "form-control neon-input", placeholder: "📅 Date de début" },
+                label: false %>
+              </div>
+              </div>
+
+            <div class="col-md-6">
+              <div class="input-wrapper">
+                <i class="fa-solid fa-calendar-check neon-icon"></i>
+                <%= f.input :date_end, as: :string,
+                input_html: { data: { controller: "datepicker" }, class: "form-control neon-input", placeholder: "📅 Date de fin" },
+                label: false %>
+              </div>
+            </div>
+            </div>
+
+
+            <div class="text-center mt-4">
+                <%= f.submit "Confirmer la réservation", id: "btn-booking", class: "btn-neon" %>
+            </div>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</div>
