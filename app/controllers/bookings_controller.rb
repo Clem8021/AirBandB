@@ -27,7 +27,7 @@ class BookingsController < ApplicationController
     @booking.experience = @experience
     @booking.user = current_user if user_signed_in?
     if @booking.save
-      redirect_to bookings_path
+      redirect_to experience_path(@experience), notice: "Réservation confirmée !"
     else
       puts @booking.errors.full_messages
       render "experiences/show", status: :unprocessable_entity
