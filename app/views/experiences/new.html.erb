@@ -1,0 +1,17 @@
+<div class="container position-relative">
+
+  <div class="position-absolute top-0 end-0 m-3">
+    <%= link_to experiences_path, class: "btn-return" do %>
+      <i class="fa-solid fa-arrow-left"></i> Retour
+    <% end %>
+  </div>
+
+  <div class="form-experience">
+    <h2>Créer une nouvelle expérience musicale</h2>
+    <%= render "experiences/form" %>
+  </div>
+
+  <div class="text-center mt-3">
+    <%= link_to "Retour aux expériences", experiences_path, class: "btn btn-outline-light rounded-pill" %>
+  </div>
+</div>
