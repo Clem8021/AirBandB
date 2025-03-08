@@ -1,15 +1,36 @@
 <div class="container mt-5">
-  <div class="row">
-    <div class="col">
-      <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1566808907623-51b8fc382454?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)">
-        <h1>Bienvenue sur AirBandB</h1>
+ <div class="banner position-relative d-flex align-items-center text-white text-center"
+       style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+              url('https://images.unsplash.com/photo-1566808907623-51b8fc382454?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+              background-size: cover; background-position: center; height: 60vh;">
+
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <h1 class="display-3 fw-bold">AirBandB – L'expérience musicale sans limite !</h1>
+          <p class="fs-4 fst-italic">Des concerts ? Non. Des expériences inoubliables !</p>
+
+          <div class="mt-4">
+            <button class="btn btn-lg btn-purple rounded-pill px-4 shadow" data-bs-toggle="modal" data-bs-target="#experienceModal">
+              Proposer une expérience 🎤
+            </button>
+
+            <%= link_to "Explorer les expériences 🤩", experiences_path,
+                        class: "btn btn-lg btn-purple rounded-pill px-4 ms-2 shadow" %>
+          </div>
+        </div>
       </div>
-      <p class="fst-italic mt-2">Le lieu idéal pour trouver des expériences musicales qui te correspondent</p>
     </div>
   </div>
 
+<%= render "shared/form_modal" %>
+
+  <div class="text-center mt-5">
+    <h2 class="fw-bold mt-3">🔥 Déjà <%= Experience.count %> expériences musicales délirantes enregistrées ! 🔥</h2>
+  </div>
+
   <div class="row">
-    <% @experiences.each do |experience| %>
+    <% @experiences.first(3).each do |experience| %>
       <div class="col-12 col-md-6 col-lg-4 mb-4">
         <div class="experiences_card border shadow-sm p-3 mb-5 rounded m-3">
           <%= link_to experience_path(experience), class: "text-decoration-none text-dark" do %>
@@ -31,3 +52,14 @@
     <% end %>
   </div>
 </div>
+<div class="text-center mt-5">
+  <h2 class="fw-bold text-uppercase mt-5">🎲 Pas inspiré ? Tire au sort une expérience musicale !</h2>
+  <%= link_to "🎲 Découvrir une expérience aléatoire", experience_path(Experience.order("RANDOM()").first),
+              class: "btn btn-warning btn-lg btn-purple mt-3 rounded-pill shadow" %>
+</div>
+
+
+<footer class="d-flex flex-column justify-content-center align-items-center text-center py-4 mt-5 bg-dark text-light">
+  <p class="m-0">© <%= Time.now.year %> AirBandB. Tous droits réservés.</p>
+  <p class="m-0 fst-italic">“Trouvez l’expérience musicale de vos rêves… ou de vos cauchemars.”</p>
+</footer>
