@@ -13,28 +13,54 @@
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Raleway:wght@300;400;600&display=swap');
 @import "components/form_experience";
 
-
 ul {
   list-style-type: none;
 }
 
 body {
   padding-top: 56px;
+  background-color: #F5F0FF;
+  color: black;
+  margin-bottom: 60px;
 }
 
+
+.container-back {
+  background-color: #F8F8FF;
+  border-radius: 15px;
+  box-shadow: 0px 5px 15px rgba(75, 0, 130, 0.2);
+  padding: 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+
 .btn-purple {
-  background-color: #240251;
-  border-color: #240251;
+  background-color: rgba(200, 200, 200, 0.2);
+  border: 2px solid #4B0082;
   color: white;
+  font-family: 'Permanent Marker', sans-serif;
+  font-size: 1.1rem;
+  padding: 10px 20px;
+  transition: all 0.3s ease-in-out;
+  backdrop-filter: blur(5px);
+
+}
+#hel {
+  color: black;
 }
 
 .btn-purple:hover {
-  background-color: #3a0376;
-  border-color: #3a0376;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-color: #6A0DAD;
+  color: #6A0DAD;
+  transform: scale(1.07);
+  box-shadow: 0px 0px 15px rgba(75, 0, 130, 0.4);
 }
 
+
 .banner h1 {
-  background: linear-gradient(to right, #EAE2FF, #FFFFFF);
+  background: linear-gradient(to right, #EEE6F3, #FFFFFF);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   color: #EEE;
@@ -43,50 +69,6 @@ body {
 }
 
 .banner p {
-  font-family: 'Raleway', sans-serif;
-  font-size: 1.3rem;
-}
-
-
-.btn-purple {
-  background-color: rgba(36, 2, 81, 0.8);
-  border: 2px solid #240251;
-  color: white;
-  transition: all 0.3s ease-in-out;
-
-
-}
-
-.btn-purple:hover {
-  background-color: rgba(58, 3, 118, 0.9);
-  border-color: #3a0376;
-  transform: scale(1.05);
-
-
-}
-
-h2.fw-bold {
   font-family: 'Poppins', sans-serif;
-  font-weight: 700;
-  color: #EEE;
-  text-shadow: 3px 3px 15px rgba(255, 255, 255, 0.2);
-  letter-spacing: 1.2px;
-
-
-
-}
-
-body {
-  background-color: #121212;
-  color: white;
-  margin-bottom: 60px;
-}
-
-.container-back {
-  background-color: white;
-  border-radius: 15px;
-  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5);
-  padding: 40px;
-  max-width: 1200px;
-  margin: auto;
+  font-size: 1.3rem;
 }

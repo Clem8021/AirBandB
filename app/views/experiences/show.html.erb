@@ -8,7 +8,7 @@
         <!-- Section photo de l'expérience -->
         <div class="text-center">
           <% if @experience.photo.attached? %>
-            <%= image_tag @experience.photo, alt: "Image de l'expérience"%>
+            <%= image_tag @experience.photo, alt: "Image de l'expérience" %>
           <% else %>
             <p class="text-muted">Aucune photo disponible pour cette expérience.</p>
           <% end %>
@@ -27,11 +27,53 @@
           </div>
         </div>
 
-        <!-- Section retour à la page d'accueil -->
+        <!-- Boutons de navigation -->
         <div class="text-center mb-5 mt-3">
           <%= link_to 'Retour à l\'accueil', root_path, class: "button m-2" %>
-          <%= link_to "Réserver l'expérience",  new_experience_booking_path(experience_id: @experience.id), class: "button m-2" %>
+          <%= link_to "Réserver l'expérience", new_experience_booking_path(experience_id: @experience.id),
+            class: "button m-2", id: "reserveButton" %>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de confirmation -->
+  <div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="confirmationModalLabel">Réservation Confirmée !</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Votre réservation pour <strong><%= @experience.name %></strong> a bien été prise en compte.
+          Retrouvez-la dans votre tableau de bord !
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" id="closeModalButton" data-bs-dismiss="modal">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script pour afficher la modale après réservation -->
+<% if flash[:notice] == "Réservation confirmée !" %>
+  <script>
+    document.addEventListener("turbo:load", function() {
+      var myModal = new bootstrap.Modal(document.getElementById('confirmationModal'));
+      myModal.show();
+      var closeButton = document.getElementById('closeModalButton');
+      closeButton.addEventListener('click', function() {
+        window.location.href = "<%= root_path %>";
+      });
+    });
+  </script>
+<% end %>
+<% else %>
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col">
+        <p class="text-center">Aucune expérience trouvée.</p>
       </div>
     </div>
   </div>
