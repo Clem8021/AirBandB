@@ -1,0 +1,51 @@
+<div class="modal fade" id="experienceModal" tabindex="-1" aria-labelledby="modalTitle" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 id="modalTitle" class="modal-title">Créer une nouvelle expérience musicale</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+      </div>
+
+      <div class="modal-body">
+        <%= form_with(model: @experience, scope: :experience, url: experiences_path, method: :post, local: true, data: { turbo: false }, html: { multipart: true }) do |f| %>
+          <div class="mb-3">
+            <%= f.label :name, "Nom de l'expérience", class: "form-label" %>
+            <%= f.text_field :name, class: "form-control", placeholder: "Ex: Jazz & Chill à Paris" %>
+          </div>
+
+          <div class="mb-3">
+            <%= f.label :stage_name, "Scène", class: "form-label" %>
+            <%= f.text_field :stage_name, class: "form-control", placeholder: "Ex: Catacombes" %>
+          </div>
+
+          <div class="mb-3">
+            <%= f.label :musical_genre, "Genre musical", class: "form-label" %>
+            <%= f.text_field :musical_genre, class: "form-control", placeholder: "Ex: Rock, Jazz, Electro..." %>
+          </div>
+
+          <div class="mb-3">
+            <%= f.label :absurd_requirement, "Exigence absurde", class: "form-label" %>
+            <%= f.text_field :absurd_requirement, class: "form-control", placeholder: "Ex: Un lama en coulisses 🦙" %>
+          </div>
+
+          <div class="mb-3">
+            <%= f.label :price_per_day, "Tarif par jour (€)", class: "form-label" %>
+            <%= f.number_field :price_per_day, class: "form-control", placeholder: "Ex: 500" %>
+          </div>
+
+          <div class="mb-3">
+            <%= f.label :photo, "Photo de l'expérience", class: "form-label" %>
+            <label class="file-upload">
+              <i class="fa-solid fa-camera-retro"></i> Ajouter une photo
+              <%= f.file_field :photo, class: "d-none" %>
+            </label>
+          </div>
+
+          <div class="text-center mt-4">
+            <%= f.button "Créer l'expérience", id: "btn-custom", class: "btn-submit" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

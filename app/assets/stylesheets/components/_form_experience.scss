@@ -1,0 +1,298 @@
+
+
+$form-bg: #240251;
+$button-color: #6a0dad;
+$input-bg: rgba(255, 255, 255, 0.1);
+$input-focus: rgba(255, 255, 255, 0.3);
+$highlight: #ff0099;
+
+.form-experience {
+  background: linear-gradient(135deg, #240251, #4b0082);
+  color: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  max-width: 600px;
+  margin: 30px auto;
+  animation: fadeIn 0.8s ease-in-out;
+  font-family: 'Raleway', sans-serif;
+
+  h2 {
+    font-size: 26px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.2);
+    font-family: 'Permanent Marker', cursive;
+    color: #ddd;
+
+  }
+
+  .form-label {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #ffffff;
+  }
+
+  .form-control {
+    background: $input-bg;
+    border: none;
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    transition: 0.3s ease-in-out;
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.6);
+      font-style: italic;
+    }
+
+    &:focus {
+      background: $input-focus;
+      outline: none;
+      box-shadow: 0 0 10px rgba(255, 0, 153, 0.5);
+    }
+  }
+
+
+  .btn-submit {
+    background: linear-gradient(135deg, #6a0dad, #58a6ff) !important;
+    color: white !important;
+    font-weight: bold !important;
+    padding: 12px 20px !important;
+    border-radius: 50px !important;
+    text-transform: uppercase !important;
+    font-size: 16px !important;
+    letter-spacing: 1px !important;
+    transition: all 0.3s ease-in-out !important;
+    display: inline-block !important;
+    text-align: center !important;
+    box-shadow: 0 4px 10px rgba(88, 166, 255, 0.3) !important;
+    border: none !important;
+    cursor: pointer !important;
+    position: relative !important;
+    overflow: hidden !important;
+
+    &:hover {
+      background: linear-gradient(135deg, #58a6ff, #6a0dad) !important;
+      transform: scale(1.05) !important;
+      box-shadow: 0 0 15px rgba(88, 166, 255, 0.6) !important;
+    }
+
+    &:active {
+      transform: scale(0.98) !important;
+      box-shadow: 0 2px 8px rgba(88, 166, 255, 0.4) !important;
+    }
+  }
+
+
+  .file-upload {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    border: 2px dashed rgba(255, 255, 255, 0.5);
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    &:hover {
+      border-color: $highlight;
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    input {
+      display: none;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.text-center.mt-3 {
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.btn-return {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 50px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(1.05);
+  }
+
+  i {
+    font-size: 16px;
+  }
+}
+
+
+.btn-add-experience {
+  background: linear-gradient(135deg, #6a0dad, #4b0082);
+  color: white;
+  font-weight: bold;
+  padding: 12px 20px;
+  border-radius: 50px;
+  text-transform: uppercase;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 10px rgba(255, 0, 153, 0.4);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+
+  &:hover {
+    background: linear-gradient(135deg, #4b0082, #6a0dad);
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 0, 153, 0.8);
+  }
+}
+
+.modal-content {
+  background: linear-gradient(135deg, #240251, #4b0082);
+  color: white;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  font-family: 'Raleway', sans-serif;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.modal-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.modal-title {
+  font-family: 'Permanent Marker', cursive;
+  color: #f0f0f0;
+  font-size: 24px;
+  text-shadow: 1px 1px 6px rgba(255, 255, 255, 0.3);
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.file-upload {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  border: 2px dashed rgba(255, 255, 255, 0.5);
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  &:hover {
+    border-color: #ff0099;
+    background: rgba(255, 255, 255, 0.3);
+  }
+
+  input {
+    display: none;
+  }
+}
+
+.sticky-add {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, #6a0dad, #4b0082);
+  color: white;
+  font-weight: bold;
+  padding: 12px 20px;
+  border-radius: 50px;
+  text-transform: uppercase;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 10px rgba(255, 0, 153, 0.4);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 1000;
+  cursor: pointer;
+
+  &:hover {
+    background: linear-gradient(135deg, #4b0082, #6a0dad);
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(255, 0, 153, 0.8);
+  }
+}
+
+#btn-custom {
+  background: linear-gradient(135deg, #6a0dad, #58a6ff) !important;
+  color: white !important;
+  font-weight: bold !important;
+  padding: 12px 20px !important;
+  border-radius: 50px !important;
+  text-transform: uppercase !important;
+  font-size: 16px !important;
+  letter-spacing: 1px !important;
+  transition: all 0.3s ease-in-out !important;
+  display: inline-block !important;
+  text-align: center !important;
+  box-shadow: 0 4px 10px rgba(88, 166, 255, 0.3) !important;
+  border: none !important;
+  cursor: pointer !important;
+  position: relative !important;
+  overflow: hidden !important;
+
+  &:hover {
+    background: linear-gradient(135deg, #58a6ff, #6a0dad) !important;
+    transform: scale(1.05) !important;
+    box-shadow: 0 0 15px rgba(88, 166, 255, 0.6) !important;
+  }
+
+  &:active {
+    transform: scale(0.98) !important;
+    box-shadow: 0 2px 8px rgba(88, 166, 255, 0.4) !important;
+  }
+}
