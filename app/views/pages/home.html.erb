@@ -12,7 +12,7 @@
           <p class="fs-4 fst-italic">Des concerts ? Non. Des expériences inoubliables !</p>
 
           <div class="mt-4">
-            <button class="btn btn-lg btn-purple rounded-pill px-4 shadow" data-bs-toggle="modal" data-bs-target="#experienceModal">
+            <button class="btn btn-lg btn-purple rounded-pill px-4 shadow" data-bs-toggle="modal" data-bs-target="#experienceModal" data: { turbo: false }>
               Proposer une expérience 🎤
             </button>
 
@@ -29,8 +29,8 @@
   <div class="text-center mt-5">
     <h2 class="fw-bold mt-3">🔥 Déjà <%= Experience.count %> expériences musicales délirantes enregistrées ! 🔥</h2>
   </div>
-
-  <div class="row">
+  
+ <div class="row">
   <% @experiences.first(3).each do |experience| %>
     <div class="col-12 col-md-6 col-lg-4 mb-4">
       <div class="experiences_card">

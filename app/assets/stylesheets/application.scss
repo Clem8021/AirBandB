@@ -11,64 +11,66 @@
 @import "components/index";
 @import "pages/index";
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Raleway:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sixtyfour+Convergence&display=swap');
 @import "components/form_experience";
 
 ul {
   list-style-type: none;
 }
 
+
 body {
   padding-top: 56px;
-  background-color: #F5F0FF;
-  color: black;
+  background-color: black;
+  color: white;
   margin-bottom: 60px;
 }
 
 
 .container-back {
-  background-color: #F8F8FF;
+  background-color: #2c013e;
   border-radius: 15px;
-  box-shadow: 0px 5px 15px rgba(75, 0, 130, 0.2);
+  box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.1);
   padding: 40px;
   max-width: 1200px;
   margin: auto;
 }
 
-
 .btn-purple {
-  background-color: rgba(200, 200, 200, 0.2);
-  border: 2px solid #4B0082;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid #b089f7;
   color: white;
   font-family: 'Permanent Marker', sans-serif;
   font-size: 1.1rem;
-  padding: 10px 20px;
+  padding: 12px 24px;
   transition: all 0.3s ease-in-out;
   backdrop-filter: blur(5px);
-
-}
-#hel {
-  color: black;
 }
 
 .btn-purple:hover {
-  background-color: rgba(255, 255, 255, 0.4);
-  border-color: #6A0DAD;
-  color: #6A0DAD;
-  transform: scale(1.07);
-  box-shadow: 0px 0px 15px rgba(75, 0, 130, 0.4);
+  background-color: rgba(255, 255, 255, 0.3);
+  border-color: #d2b3ff;
+  color: #fff;
+  transform: scale(1.1);
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.3);
 }
 
 
 .banner h1 {
-  background: linear-gradient(to right, #EEE6F3, #FFFFFF);
+  font-family: 'Permanent Marker', cursive;
+  font-size: 3.2rem;
+  font-weight: bold;
+  background: linear-gradient(to right, #d4a5ff, #ffffff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  color: #EEE;
-  text-shadow: 3px 3px 15px rgba(255, 255, 255, 0.2);
-  font-family: 'Permanent Marker', sans-serif;
+  color: #d4a5ff; /* Couleur de secours */
+  text-shadow: 3px 3px 10px rgba(212, 165, 255, 0.6), 0px 0px 15px rgba(255, 255, 255, 0.5);
+  letter-spacing: 1px;
 }
+
 
 .banner p {
   font-family: 'Poppins', sans-serif;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.8);
 }
