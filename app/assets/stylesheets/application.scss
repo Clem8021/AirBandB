@@ -37,7 +37,9 @@ body {
   background: linear-gradient(to right, #EAE2FF, #FFFFFF);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+  color: #EEE;
+  text-shadow: 3px 3px 15px rgba(255, 255, 255, 0.2);
+  font-family: 'Permanent Marker', sans-serif;
 }
 
 .banner p {
@@ -47,22 +49,44 @@ body {
 
 
 .btn-purple {
-  background-color: rgba(36, 2, 81, 0.7);
+  background-color: rgba(36, 2, 81, 0.8);
   border: 2px solid #240251;
   color: white;
   transition: all 0.3s ease-in-out;
+
+
 }
 
 .btn-purple:hover {
-  background-color: rgba(36, 2, 81, 0.9);
+  background-color: rgba(58, 3, 118, 0.9);
   border-color: #3a0376;
   transform: scale(1.05);
+
+
 }
 
 h2.fw-bold {
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
-  color: #240251;
-  text-shadow: 3px 3px 15px rgba(36, 2, 81, 0.3);
+  color: #EEE;
+  text-shadow: 3px 3px 15px rgba(255, 255, 255, 0.2);
   letter-spacing: 1.2px;
+
+
+
+}
+
+body {
+  background-color: #121212;
+  color: white;
+  margin-bottom: 60px;
+}
+
+.container-back {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5);
+  padding: 40px;
+  max-width: 1200px;
+  margin: auto;
 }
