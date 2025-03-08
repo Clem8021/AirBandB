@@ -1,4 +1,3 @@
-<container-back>
 <div class="container mt-5">
  <div class="banner position-relative d-flex align-items-center text-white text-center"
        style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
@@ -32,27 +31,31 @@
   </div>
 
   <div class="row">
-    <% @experiences.first(3).each do |experience| %>
-      <div class="col-12 col-md-6 col-lg-4 mb-4">
-        <div class="experiences_card border shadow-sm p-3 mb-5 rounded m-3">
-          <%= link_to experience_path(experience), class: "text-decoration-none text-dark" do %>
-            <% if experience.photo.attached? %>
-            <%= image_tag experience.photo, alt: "Image de l'expérience", class: "img-fluid rounded shadow-lg" %>
-          <% else %>
-            <p class="text-muted">Aucune photo disponible pour cette expérience.</p>
-          <% end %>
-            <h4 class="mt-3 fw-bold"><%= experience.name %></h4>
-            <p class="mt-1 ms-2 text-muted fst-italic"><%= experience.stage_name %></p>
-            <div class="experiences_body mt-4">
-              <p><i class="fa-solid fa-music"></i> <%= experience.musical_genre %></p>
-              <p><i class="fa-solid fa-star"></i> <%= experience.absurd_requirement %></p>
-              <p><i class="fa-solid fa-euro-sign"></i> <%= experience.price_per_day %>€/jour</p>
+  <% @experiences.order("RANDOM()").first(3).each do |experience| %>
+    <div class="col-12 col-md-6 col-lg-4 mb-4">
+      <div class="experiences_card">
+        <%= link_to experience_path(experience), class: "text-decoration-none text-dark" do %>
+          <% if experience.photo.attached? %>
+            <div class="text-center">
+              <%= image_tag experience.photo, alt: "Image de l'expérience", class: "img-fluid rounded shadow-lg" %>
             </div>
+          <% else %>
+            <p class="text-muted text-center">Aucune photo disponible pour cette expérience.</p>
           <% end %>
-        </div>
+
+          <h4 class="mt-3"><%= experience.name %></h4>
+          <p class="mt-1 ms-2 text-muted fst-italic text-center">🎭 <%= experience.stage_name %></p>
+
+          <div class="experiences_body">
+            <p><i class="fa-solid fa-music"></i> <%= experience.musical_genre %></p>
+            <p><i class="fa-solid fa-star"></i> <%= experience.absurd_requirement %></p>
+            <p><i class="fa-solid fa-euro-sign"></i> <%= experience.price_per_day %>€/jour</p>
+          </div>
+        <% end %>
       </div>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
+</div>
 </div>
 <div class="text-center mt-5">
   <h2 class="fw-bold text-uppercase mt-5">🎲 Pas inspiré ? Tire au sort une expérience musicale !</h2>
@@ -62,7 +65,7 @@
 
 
 
-</container-back>
+
 <footer class="d-flex flex-column justify-content-center align-items-center text-center py-4 mt-5 bg-dark text-light">
   <p class="m-0">© <%= Time.now.year %> AirBandB. Tous droits réservés.</p>
   <p class="m-0 fst-italic">“Trouvez l’expérience musicale de vos rêves… ou de vos cauchemars.”</p>
