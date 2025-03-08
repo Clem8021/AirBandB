@@ -14,15 +14,15 @@ class ExperiencesController < ApplicationController
   def create
     @experience = Experience.new(experience_params)
     if @experience.save
-      redirect_to experiences_path
+      redirect_to experiences_path, notice: "Expérience créée avec succès !", data: { turbo: false }
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
   private
 
   def experience_params
-    params.require(:experience).permit(:name, :stage_name, :musical_genre, :absurd_requirement, :price_per_day)
+    params.require(:experience).permit(:name, :stage_name, :musical_genre, :absurd_requirement, :price_per_day, :photo)
   end
 end

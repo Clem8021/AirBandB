@@ -7,7 +7,7 @@
       </div>
 
       <div class="modal-body">
-        <%= form_with(model: @experience, local: true) do |f| %>
+        <%= form_with(model: @experience, scope: :experience, url: experiences_path, method: :post, local: true, data: { turbo: false }, html: { multipart: true }) do |f| %>
           <div class="mb-3">
             <%= f.label :name, "Nom de l'expérience", class: "form-label" %>
             <%= f.text_field :name, class: "form-control", placeholder: "Ex: Jazz & Chill à Paris" %>
@@ -15,7 +15,7 @@
 
           <div class="mb-3">
             <%= f.label :stage_name, "Scène", class: "form-label" %>
-            <%= f.text_field :stage_name, class: "form-control", placeholder: "Ex: DJ Lulu" %>
+            <%= f.text_field :stage_name, class: "form-control", placeholder: "Ex: Catacombes" %>
           </div>
 
           <div class="mb-3">
