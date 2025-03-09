@@ -1,0 +1,27 @@
+.show_card{
+
+  p, h1, h2, h3, h4{
+    color: rgb(50, 3, 111);
+
+  }
+
+  img{
+    height: 200px;
+    width: 350px;
+    border-radius: 10px;
+    object-fit: cover;
+
+  }
+
+  a{
+    text-decoration: none;
+  }
+
+.body{
+  background-color: rgb(245, 242, 249);
+  border: solid #32036f 1px;
+  border-radius: 10px;
+  padding: 15px;
+
+}
+}

@@ -129,54 +129,6 @@ $highlight: #ff0099;
   margin-bottom: 40px;
 }
 
-.btn-return {
-  background: rgba(255, 255, 255, 0.2);
-  color: white;
-  padding: 10px 15px;
-  border-radius: 50px;
-  font-weight: bold;
-  text-transform: uppercase;
-  text-decoration: none;
-  transition: all 0.3s ease-in-out;
-  font-size: 14px;
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  backdrop-filter: blur(5px);
-  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
-
-  &:hover {
-    background: rgba(255, 255, 255, 0.4);
-    transform: scale(1.05);
-  }
-
-  i {
-    font-size: 16px;
-  }
-}
-
-
-.btn-add-experience {
-  background: linear-gradient(135deg, #6a0dad, #4b0082);
-  color: white;
-  font-weight: bold;
-  padding: 12px 20px;
-  border-radius: 50px;
-  text-transform: uppercase;
-  font-size: 16px;
-  transition: all 0.3s ease-in-out;
-  box-shadow: 0 4px 10px rgba(255, 0, 153, 0.4);
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 20px;
-
-  &:hover {
-    background: linear-gradient(135deg, #4b0082, #6a0dad);
-    transform: scale(1.05);
-    box-shadow: 0 0 15px rgba(255, 0, 153, 0.8);
-  }
-}
 
 .modal-content {
   background: linear-gradient(135deg, #240251, #4b0082);
@@ -295,4 +247,115 @@ $highlight: #ff0099;
     transform: scale(0.98) !important;
     box-shadow: 0 2px 8px rgba(88, 166, 255, 0.4) !important;
   }
+}
+
+.flatpickr-calendar {
+  background: linear-gradient(135deg, #240251, #4b0082) !important;
+  border: 2px solid #ff00ff !important;
+  box-shadow: 0px 0px 15px rgba(255, 0, 153, 0.6) !important;
+  border-radius: 10px !important;
+}
+
+.flatpickr-day {
+  color: white !important;
+  font-weight: bold !important;
+  border-radius: 50% !important;
+}
+
+.flatpickr-day:hover {
+  background: rgba(255, 0, 153, 0.6) !important;
+  box-shadow: 0px 0px 10px rgba(255, 0, 153, 0.5) !important;
+}
+
+.flatpickr-day.selected {
+  background: #ff00ff !important;
+  color: white !important;
+  box-shadow: 0px 0px 12px rgba(255, 255, 255, 0.8) !important;
+}
+
+.flatpickr-months {
+  background: transparent !important;
+  color: white !important;
+}
+
+.flatpickr-month {
+  font-size: 1.2rem !important;
+  text-transform: uppercase !important;
+}
+
+.flatpickr-current-month {
+  color: white !important;
+}
+
+.flatpickr-weekdays {
+  color: #ff00ff !important;
+}
+
+.flatpickr-weekday {
+  font-weight: bold !important;
+}
+
+.flatpickr-time {
+  background: rgba(255, 0, 153, 0.3) !important;
+  border-radius: 8px !important;
+  color: white !important;
+}
+
+.flatpickr-time input {
+  color: white !important;
+  font-weight: bold !important;
+}
+
+.custom-booking-form {
+  background: linear-gradient(135deg, rgba(36, 2, 81, 0.8), rgba(75, 0, 130, 0.9));
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 0 20px rgba(138, 43, 226, 0.4);
+  max-width: 600px;
+  margin: auto;
+  font-family: 'Raleway', sans-serif;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  transition: all 0.3s ease-in-out;
+}
+
+.input-wrapper:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.neon-icon {
+  position: absolute;
+  left: 10px;
+  color: #ff00ff;
+  font-size: 1.2rem;
+  z-index: 1;
+}
+
+.neon-input {
+  width: 100%;
+  padding-left: 35px;
+  font-size: 1rem;
+  border: none;
+  background: transparent;
+  color: white;
+  transition: 0.3s;
+}
+
+.neon-input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+  font-style: italic;
+}
+
+.neon-input:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 10px rgba(255, 0, 153, 0.5);
 }
