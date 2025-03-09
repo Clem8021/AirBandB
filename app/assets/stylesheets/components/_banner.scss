@@ -13,3 +13,22 @@
   border-radius: 10px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
+
+.banner h1 {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 3.2rem;
+  font-weight: bold;
+  background: linear-gradient(to right, #d4a5ff, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #d4a5ff; /* Couleur de secours */
+  text-shadow: 3px 3px 10px rgba(212, 165, 255, 0.6), 0px 0px 15px rgba(255, 255, 255, 0.5);
+  letter-spacing: 1px;
+}
+
+
+.banner p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.8);
+}
