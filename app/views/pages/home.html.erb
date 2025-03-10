@@ -37,7 +37,7 @@
         <%= link_to experience_path(experience), class: "text-decoration-none text-dark flex-grow-1 d-flex flex-column" do %>
           <% if experience.photo.attached? %>
             <div class="text-center">
-              <%= image_tag experience.photo, alt: "Image de l'expérience", class: "img-fluid rounded shadow-lg experiences-img flex-shrink-0" %>
+              <%= image_tag experience.photo, alt: "Image de l'expérience", class: "img-fluid rounded shadow-lg experiences-img" %>
             </div>
           <% else %>
             <p class="text-muted text-center">Aucune photo disponible pour cette expérience.</p>
