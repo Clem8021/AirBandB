@@ -342,7 +342,7 @@ DEPENDENCIES
   activestorage-cloudinary-service
   autoprefixer-rails
   bootsnap
-  bootstrap (~> 5.2)
+  bootstrap (~> 5.3)
   capybara
   cloudinary
   debug
