@@ -1,7 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon fixed-top">
   <div class="container-fluid">
     <div class="navbar-title d-flex align-items-center justify-content-start">
-      <%= link_to "#", class: "navbar-brand" do %>
+      <%= link_to root_path, class: "navbar-brand" do %>
         <%= image_tag "https://as1.ftcdn.net/v2/jpg/03/11/40/32/1000_F_311403223_PqZgUJBzDitoQu2GJ86wHbNCJxpXK7FZ.jpg", style: "width: 60px; height: auto; border-radius: 15px;" %>
       <% end %>
       <h5 class="mt-2">AirbandB</h5>
@@ -29,7 +29,7 @@
               <%= image_tag current_user.avatar_url.presence || "https://media.istockphoto.com/id/1431567498/fr/vectoriel/illustration-vectorielle-de-notes-de-musique-sur-fond-blanc.jpg?s=612x612&w=0&k=20&c=BlXbPeaCz3PEle5hXy6ndnVw_4OKunNSUInE-QbDYg4=",
                 class: "avatar dropdown-toggle",
                 id: "navbarDropdown",
-                data: { bs_toggle: "dropdown" },
+                data: { bs_toggle: "dropdown", bs_auto_close: "outside" },
                 'aria-haspopup': true,
                 'aria-expanded': false
               %>
