@@ -1,17 +1,17 @@
-<button class="btn-add-experience sticky-add" data-bs-toggle="modal" data-bs-target="#experienceModal" data-turbo="false">
-  <i class="fa-solid fa-plus"></i> Ajouter une expérience
+<button class="sticky-add mb-5  btn-purple rounded-pill px-4 shadow ms-4" data-bs-toggle="modal" data-bs-target="#experienceModal" data-turbo="false">
+  <i class="fa-solid fa-circle-plus"></i> Ajouter une expérience
 </button>
 
 <%= render 'shared/form_modal' %>
 
-<div class="row equal-height-cards">
+<div class="row">
   <% @experiences.each do |experience| %>
-    <div class="col-12 col-md-6 col-lg-4 mb-4 d-flex align-items-stretch">
-      <div class="experiences_card d-flex flex-column h-100 w-100">
+    <div class="col-lg-4 mb-4 d-flex align-items-stretch">
+      <div class="experiences_card d-flex flex-column ">
         <%= link_to experience_path(experience), class: "text-decoration-none text-dark flex-grow-1 d-flex flex-column" do %>
           <% if experience.photo.attached? %>
             <div class="text-center">
-              <%= image_tag experience.photo, alt: "Image de l'expérience", class: "img-fluid rounded shadow-lg experiences-img flex-shrink-0" %>
+              <%= image_tag experience.photo, alt: "Image de l'expérience", class: "img-fluid rounded shadow-lg flex-shrink-0" %>
             </div>
           <% else %>
             <p class="text-muted text-center">Aucune photo disponible pour cette expérience.</p>

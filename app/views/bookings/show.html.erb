@@ -2,9 +2,9 @@
   <% if @booking.present? %>
     <div class="container mt-4">
       <div class="row">
-        <div class="col-md-8 offset-md-2 show_card">
+        <div class="show_card">
           <!-- Titre de l'expérience -->
-          <h1 class="display-4 text-center mb-3"><%= @booking.experience.name %></h1>
+          <h1 class="display-4 text-center"><%= @booking.experience.name %></h1>
 
           <!-- Section photo de l'expérience -->
           <div class="text-center">
@@ -16,26 +16,24 @@
           </div>
 
           <!-- Détails de l'expérience -->
-          <div class="experience-details mt-4">
+          <div>
             <h4>Détails</h4>
-            <div class="mb-3">
-              <div class="body">
+              <div class="show_card body">
                 <p><i class="fa-solid fa-house-chimney"></i> &nbsp<strong>Scène :</strong> <%= @booking.experience.stage_name %></p>
                 <p><i class="fa-solid fa-guitar"></i> &nbsp<strong>Genre musical :</strong> <%=  @booking.experience.musical_genre %></p>
                 <p><i class="fa-solid fa-people-carry-box"></i> &nbsp<strong>Exigence absurde :</strong> <%=  @booking.experience.absurd_requirement %></p>
                 <p><i class="fa-solid fa-money-check-dollar"></i> &nbsp<strong>Prix par jour :</strong> <%=  @booking.experience.price_per_day %> €</p>
               </div>
-            </div>
           </div>
 
-          <div class="experience-details mt-4">
+          <div class="show_card resa">
             <h4>Votre réservation: </h4>
             <p><i class="fa-solid fa-calendar-days ms-5"></i> Du: <%= @booking.date_start %> Au: <%= @booking.date_end %></p>
           </div>
 
           <!-- Section retour à la page d'accueil -->
           <div class="text-center mt-4 mb-5">
-            <%= link_to 'Retour à l\'accueil', root_path, class: "button" %>
+            <%= link_to 'Retour à l\'accueil', root_path, class: "btn btn-lg btn-purple rounded-pill px-4 shadow" %>
           </div>
         </div>
       </div>
