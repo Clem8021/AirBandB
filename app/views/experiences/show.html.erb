@@ -27,7 +27,7 @@
 
         <!-- Boutons de navigation -->
         <div class="text-center mb-5 mt-5">
-          <%= link_to 'Retour à l\'accueil 🔙', root_path, class: "btn btn-lg btn-purple rounded-pill px-4 shadow" %>
+          <%= link_to 'Retour à l\'accueil', root_path, class: "btn btn-lg btn-purple rounded-pill px-4 shadow" %>
 
 
           <!-- Bouton pour ouvrir la modal de réservation -->
@@ -64,7 +64,7 @@
           </div>
 
           <div class="text-center">
-            <h3 class="h5 text-purple">📅 Sélectionnez vos dates</h3>
+            <h3 class="h5 text-purple mt-3 mb-3">📅 Sélectionnez vos dates</h3>
           </div>
 
           <%= simple_form_for [@experience, @booking || Booking.new], html: { class: "custom-booking-form" } do |f| %>
