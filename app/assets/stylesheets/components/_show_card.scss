@@ -1,16 +1,26 @@
 .show_card{
 
-  p, h1, h2, h3, h4{
-    color: rgb(50, 3, 111);
+  h1, h2, h3, h4{
+    font-family: 'Permanent Marker', cursive;
+    background: linear-gradient(to right, #d4a5ff, #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #d4a5ff; /* Couleur de secours */
+    text-shadow: 3px 3px 8px rgba(212, 165, 255, 0.6), 0px 0px 12px rgba(255, 255, 255, 0.5);
+    padding: 30px 0px 20px 0px;
+  }
+
+  p{
+    color: #6A0DAD;
+    text-shadow: 3px 3px 5px rgba(212, 165, 255, 0.6), 0px 0px 5px rgba(255, 255, 255, 0.5);
 
   }
 
   img{
-    height: 200px;
-    width: 350px;
+    height: 250px;
+    width: 400px;
     border-radius: 10px;
     object-fit: cover;
-
   }
 
   a{
@@ -18,10 +28,19 @@
   }
 
 .body{
+  font-size: 20px;
   background-color: rgb(245, 242, 249);
-  border: solid #32036f 1px;
   border-radius: 10px;
-  padding: 15px;
+  padding: 30px 30px 20px 55px;
+  filter: drop-shadow(0 0 0.55rem #d4a5ff);
+  border: 3px solid #6A0DAD;
+}
 
+.resa{
+
+  p{
+    color: #d4a5ff;
+    text-shadow: 3px 3px 5px rgba(212, 165, 255, 0.6), 0px 0px 5px rgba(255, 255, 255, 0.5);
+  }
 }
 }
